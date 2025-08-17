@@ -1,0 +1,77 @@
+@import "styles/helpers";
+
+.note {
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #2d2d2d;
+  @include flex-column;
+
+  &__title {
+    margin-bottom: 13px;
+    @include font-futura-18;
+    color:$white;
+  }
+
+  &__media {
+    margin-bottom: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__media-item {
+    height: 93px;
+    width: 30%;
+    @include flex-centered;
+
+    &_big {
+      width: 100%;
+    }
+  }
+
+  &__link-block {
+    margin-bottom: 9px;
+    @include font-futura-15;
+  }
+
+  &__link {
+    font-family: sans-serif;
+
+    &:hover {
+      color:$white;
+    }
+  }
+
+  &__text {
+    margin-bottom: 9px;
+    padding: 10px;
+    border-radius: 20px;
+    min-height: 107px;
+    background-color: $grey;
+    @include font-futura-15;
+    word-break: break-all;
+    white-space: pre-line;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  &__date {
+    margin-right: auto;
+    @include font-futura-10;
+  }
+
+  &__edit,
+  &__delete {
+    @include button;
+    min-width: 100px;
+
+    @include media-xs {
+      min-width: unset;
+    }
+  }
+}

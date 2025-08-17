@@ -1,0 +1,28 @@
+@import "styles/helpers";
+
+.note-photo {
+  @include flex-column;
+  align-items: center;
+  gap: 8px;
+  width: 30%;
+  overflow: hidden;
+
+  &__photo {
+    height: 93px;
+    width: 100%;
+    @include flex-centered;
+  }
+
+  &__name {
+    margin-bottom: 4px;
+    width: 100%;
+    @include font-futura-12;
+    text-align: center;
+    @include ellipsis();
+  }
+
+  &__delete {
+    @include button;
+    margin-top: auto;
+  }
+}

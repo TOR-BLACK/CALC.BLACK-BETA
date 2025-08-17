@@ -1,0 +1,20 @@
+@import "styles/helpers";
+
+@font-face {
+  $font-inter-src: '#{$font-inter-path}#{$font-inter-regular}';
+
+  font-family: $font-inter;
+  font-style: normal;
+  font-display: swap;
+  src: url('#{$font-inter-src}.ttf') format('truetype');
+}
+
+@font-face {
+  $font-futura-src: '#{$font-futura-path}#{$font-futura-regular}';
+
+  font-family: $font-futura;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('#{$font-futura-src}.ttf') format('truetype');
+}

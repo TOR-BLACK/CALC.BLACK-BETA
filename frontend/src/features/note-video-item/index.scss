@@ -1,0 +1,16 @@
+@import "styles/helpers";
+
+.note-video-item {
+  height: 93px;
+  width: 30%;
+  @include flex-centered;
+
+  &_big {
+    width: 100%;
+  }
+
+  &__video {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}

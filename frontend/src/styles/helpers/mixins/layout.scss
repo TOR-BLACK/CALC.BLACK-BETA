@@ -1,0 +1,54 @@
+@import "../colors";
+@import "../variables";
+
+/* Grid */
+@function getGridPercent($target, $context: 12, $with-percent: false) {
+  $ratio: $target/$context;
+
+  @if $with-percent {
+    @return $ratio * 100%;
+  } @else {
+    @return $ratio;
+  }
+}
+
+@mixin grid($target, $context: 12, $gap: false) {
+  $ratio: getGridPercent($target, $context);
+  $percent: $ratio * 100%;
+  width: $percent;
+
+  @if $gap {
+    width: calc(#{$percent} - (#{$gap} / 2));
+  }
+}
+
+@mixin grid-px($target, $context: 1440) {
+  width: (($target/$context) * 100%);
+}
+/* Grid ends */
+
+/* Media queries */
+@mixin media-xs {
+  @media (max-width: $media-xs) {
+    @content;
+  }
+}
+
+@mixin media-mobile {
+  @media (max-width: $media-mobile) {
+    @content;
+  }
+}
+
+@mixin media-calc {
+  @media (max-height: $calculator-height), (max-width: $media-mobile) {
+    @content;
+  }
+}
+/* Media queries end */
+
+@mixin container {
+  margin: 0 auto;
+  padding: 0 $gap-20;
+  width: 100%;
+}

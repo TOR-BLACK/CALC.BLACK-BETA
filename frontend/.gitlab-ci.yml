@@ -1,0 +1,31 @@
+image: node:18.19.0
+
+variables:
+  GIT_STRATEGY: clone
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+  cache:
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - build/
+  tags:
+    - calculator
+
+deploy:
+  stage: deploy
+  script:
+    - rsync -av --delete $CI_PROJECT_DIR/build/ /var/www/calculator-build/
+  only:
+    - release
+  tags:
+    - calculator

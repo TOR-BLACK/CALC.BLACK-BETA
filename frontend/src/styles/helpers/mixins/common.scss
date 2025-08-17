@@ -1,0 +1,45 @@
+@import "../colors";
+@import "../variables";
+
+@mixin flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin position-centered-x($transform: null) {
+  left: 50%;
+  transform: translateX(-50%) $transform;
+}
+
+@mixin position-centered-y {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin position-centered {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin dark-theme {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin full-height {
+  height: 100vh;
+  height: $app-height;
+}
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}

@@ -1,0 +1,62 @@
+@import "styles/helpers";
+
+@keyframes show-notification {
+  0% {
+    transform: translateX(calc(100% + 25px));
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.notification {
+  position: relative;
+  padding: 15px 10px 10px;
+  border-radius: 10px;
+  background-color: $grey-light;
+  @include flex-column;
+  align-items: flex-end;
+  gap: 5px;
+  transition: transform $transition-duration-x2 ease-in-out;
+  animation-name: show-notification;
+  animation-duration: $transition-duration-x2;
+  animation-iteration-count: 1;
+
+  &_error {
+    background-color: $red;
+  }
+
+  &_success {
+    background-color: $green;
+  }
+
+  &_warning {
+    background-color:$white;
+  }
+
+  &_remove {
+    transform: translateX(calc(100% + 25px));
+  }
+
+  &__title {
+    @include font-futura-15;
+    color: $white;
+  }
+
+  &__text {
+    @include font-futura-12;
+    color: $white;
+  }
+
+  &__close {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 20px;
+    height: 20px;
+    background-color: $white;
+    border-radius: 50%;
+    padding: 5px;
+    @include flex-centered;
+  }
+}

@@ -1,0 +1,48 @@
+@import "styles/helpers";
+
+.page-container {
+  @include flex-column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+
+  &_stretch {
+    @include media-mobile {
+      padding: 0;
+      gap: 0;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  &__logout {
+    @include font-futura-18;
+    color: $white;
+
+    &:hover {
+      color:$white;
+    }
+  }
+
+  &__session-options{
+    font-size: 18px;
+    line-height: 23px;
+    @media (max-width: 767px) {
+      font-size: 12px;
+    }
+  }
+
+  &__identificator {
+    @include font-futura-18;
+    color: $white;
+
+    &:hover {
+      color:$white;
+    }
+  }
+}

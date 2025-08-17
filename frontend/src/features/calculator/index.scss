@@ -1,0 +1,102 @@
+@import "styles/helpers";
+
+.calculator {
+  margin: 20px auto;
+  padding: 20px;
+  background-color: $grey-dark;
+  border-radius: 20px;
+  width: 576px;
+
+  @include media-calc {
+    width: 320px;
+  }
+
+  @include media-mobile {
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+    @include full-height;
+    @include flex-column;
+  }
+
+  &__expression-wrapper {
+    overflow: auto;
+    flex-grow: 1;
+    min-height: 142px;
+  }
+
+  &__expression {
+    margin-bottom: 10px;
+    padding: 10px;
+    @include font-60;
+    text-align: right;
+    width: 100%;
+    word-wrap: break-word;
+
+    @include media-calc {
+      @include font-30;
+      min-height: 92px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  &__button {
+    width: 128px;
+    height: 128px;
+    background-color: $grey;
+    @include flex-centered;
+    border-radius: 10px;
+    transition: transform $transition-duration ease-in-out;
+
+    @include media-calc {
+      width: 64px;
+      height: 64px;
+    }
+
+    @include media-mobile {
+      width: calc(25% - 6px);
+      height: calc((100vh - 214px) / 5);
+      height: calc((#{$app-height} - 214px) / 5);
+      max-height: 100px;
+    }
+
+    &:hover {
+      background-color: $grey-light;
+
+      @include media-mobile {
+        background-color: $grey;
+      }
+    }
+
+    &:active {
+      background-color: $grey-light;
+      transform: translate3d(2px, 2px, 2px);
+    }
+
+    &_brown {
+      background-color: $brown;
+
+      &:hover {
+        background-color: $brown-light;
+      }
+    }
+
+    &_big {
+      width: 264px;
+
+      @include media-calc {
+        width: 136px;
+      }
+
+      @include media-mobile {
+        width: calc(50% - 4px);
+      }
+    }
+  }
+}

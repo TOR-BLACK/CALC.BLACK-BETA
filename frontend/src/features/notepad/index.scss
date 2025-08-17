@@ -1,0 +1,60 @@
+@import "styles/helpers";
+
+.notepad {
+  margin: 0 auto;
+  @include flex-column;
+  max-width: 350px;
+  width: 100%;
+
+  &__title {
+    margin-bottom: 30px;
+    color:$white;
+    @include font-futura-24;
+    text-align: center;
+  }
+
+  &__list {
+    @include flex-column;
+    gap: 24px;
+  }
+
+  &__add {
+    margin-bottom: 20px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 40px;
+    @include flex-column;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #2D2D2D;
+  }
+
+  &__add-plus {
+    @include font-futura-64;
+  }
+
+  &__add-label {
+    @include font-futura-18;
+  }
+
+  &__delete-title {
+    margin-bottom: 20px;
+    @include font-futura-15;
+    color: $white;
+  }
+
+  &__delete-loader {
+    margin-bottom: 20px;
+  }
+
+  &__delete-footer {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__delete-button {
+    @include button;
+  }
+}

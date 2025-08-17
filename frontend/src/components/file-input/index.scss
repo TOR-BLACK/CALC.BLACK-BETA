@@ -1,0 +1,39 @@
+@import "styles/helpers";
+
+.file-input {
+  display: none;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__canvas {
+    display: none;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__label {
+    width: 100%;
+    align-self: flex-start;
+    padding: 2px 12px;
+    border-radius: 20px;
+    min-height: 20px;
+    border: 1px solid #2d2d2d;
+    @include flex-centered;
+    gap: 6px;
+    @include font-futura-12;
+    cursor: pointer;
+
+    &_disabled {
+      cursor: auto;
+    }
+  }
+}

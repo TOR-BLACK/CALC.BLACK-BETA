@@ -1,0 +1,19 @@
+@import "../colors";
+@import "../variables";
+
+@mixin ellipsis($nowrap: false) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @if ($nowrap) {
+    white-space: nowrap;
+  }
+}
+
+@mixin title {
+  font-size: 85px;
+  line-height: 0.95;
+  text-transform: uppercase;
+  @include font-feature-settings;
+  @include font-settings;
+}

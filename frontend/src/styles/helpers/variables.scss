@@ -1,0 +1,24 @@
+$font-inter: "Inter";
+$font-inter-path: "~/public/fonts/Inter/";
+$font-inter-regular: "Inter-Variable";
+$font-futura: "Futura PT";
+$font-futura-path: "~/public/fonts/Futura/";
+$font-futura-regular: "FuturaPT-Medium";
+
+$media-xs: 390px;
+$media-mobile: 768px;
+$calculator-height: 864px + 40px;
+
+$gap-2: 2px;
+$gap-4: 4px;
+
+$gap: 20px;
+
+$transition-duration: 100ms;
+$transition-duration-x2: 200ms;
+
+$header-height: 35px;
+
+$css-vh: var(--vh, 1vh);
+$app-height: calc($css-vh * 100);
+$app-width: var(--app-width);

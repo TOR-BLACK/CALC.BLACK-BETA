@@ -1,0 +1,14 @@
+@import "styles/helpers";
+
+.notifications {
+  position: fixed;
+  z-index: 11;
+  top: 20px;
+  right: 20px;
+
+  &__list {
+    @include flex-column;
+    align-items: flex-end;
+    gap: 10px;
+  }
+}
